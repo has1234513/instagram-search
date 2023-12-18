@@ -11,7 +11,8 @@
       <button
         @click="search"
         class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-blue-500 text-white px-4 py-2 md:px-6 md:py-3 rounded-full hover:bg-blue-600 text-sm md:text-base">
-        Search
+        Search 
+      <font-awesome-icon icon="fa-solid fa-magnifying-glass" />
       </button>
     </div>
   </div>
