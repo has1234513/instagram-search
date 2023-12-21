@@ -4263,7 +4263,7 @@
   <div class="font-sans text-black h-screen bg-teal-50 overflow-auto pt-20 flex flex-col items-center">
     <Search @search-update="onSearchUpdate"/>
     <!-- Content Display Area -->
-    <div class="w-full max-w-4xl mt-8 flex justify-center">
+    <div class="w-full max-w-4xl mt-8 flex justify-center px-3">
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
 
         <instagram-card v-for="(item, index) in filteredData" :key="index" :data="item"/>

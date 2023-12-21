@@ -1,5 +1,5 @@
 <template>
-  <div class="container max-w-md border border-grey-light m-4">
+  <div class="container max-w-md border border-grey-light">
   <div class="flex items-center px-6 py-4">
     <img :src="data.user.profile_picture" alt="Tamizhographer" class="rounded-full w-12 h-12">
     <div class="font-bold ml-4 text-sm lowercase">
@@ -22,8 +22,8 @@
         </g>
       </svg>
       <div class="text-sm pr-6 font-bold">
-    {{data.comments.count}} 
-  </div>
+        {{data.comments.count}} 
+    </div>
     </div>
   </div>
   <!-- <div class="text-sm  pb-4 px-6 font-bold">
