@@ -1,6 +1,7 @@
 <template>
     <div class="w-full max-w-4xl">
     <h2 class="text-xl md:text-2xl mx-3 font-semibold mb-4">Find and Aggregate Instagram UGC (User Generated Content)</h2>
+    <p class="text-sm mx-3" >The data displayed below is mock data </p>
       <form @submit.prevent="search" class="mt-5 mx-3 sm:flex sm:items-center">
         <input 
           v-model="searchTerm"
@@ -28,8 +29,7 @@ export default {
   },
   methods: {
     search() {
-      // Implement search functionality here
-      console.log('Searching for:', this.searchTerm);
+      this.$emit('search-update', this.searchTerm);
     },
   },
 };

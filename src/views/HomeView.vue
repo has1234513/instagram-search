@@ -1,5 +1,5 @@
 <script setup>
-  import { ref } from 'vue';
+  import { ref, computed } from 'vue';
   import instagramCard from '@/components/instagram-card.vue'
   import Search from '../components/Search.vue'
 
@@ -4245,12 +4245,12 @@
   const searchQuery = ref('');
 
   // Computed property to filter instagramData based on searchQuery
-  // const filteredData = computed(() => {
-  //   return instagramData.value.filter(item => {
-  //     // Replace 'itemProperty' with the relevant property you want to filter by
-  //     return item.itemProperty.toLowerCase().includes(searchQuery.value.toLowerCase());
-  //   });
-  // });
+  const filteredData = computed(() => {
+    return instagramData.value.filter(item => {
+      // Replace 'itemProperty' with the relevant property you want to filter by
+      return item.caption?.text?.toLowerCase().includes(searchQuery.value.toLowerCase());
+    });
+  });
 
   // Method to update searchQuery
   function onSearchUpdate(query) {
@@ -4266,7 +4266,7 @@
     <div class="w-full max-w-4xl mt-8 flex justify-center">
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
 
-        <instagram-card v-for="(item, index) in instagramData" :key="index" :data="item"/>
+        <instagram-card v-for="(item, index) in filteredData" :key="index" :data="item"/>
 
       </div>
     </div>

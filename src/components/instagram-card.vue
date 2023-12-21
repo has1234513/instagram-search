@@ -11,6 +11,9 @@
     <div class="flex">
 
       <svg class="block mr-4 h-6 text-red" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path  d="M10 3.22l-.61-.6a5.5 5.5 0 0 0-7.78 7.77L10 18.78l8.39-8.4a5.5 5.5 0 0 0-7.78-7.77l-.61.61z"></path></svg>
+        <div class="text-sm pr-6 font-bold">
+            {{data.likes.count}}
+        </div>
       <svg class="block mr-4 h-6" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
         <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
           <g id="icon-shape">
@@ -18,14 +21,17 @@
           </g>
         </g>
       </svg>
+      <div class="text-sm pr-6 font-bold">
+    {{data.comments.count}} 
+  </div>
     </div>
   </div>
-  <div class="text-sm  pb-4 px-6 font-bold">
+  <!-- <div class="text-sm  pb-4 px-6 font-bold">
     {{data.likes.count}} likes
   </div>
   <div class="text-sm  pb-4 px-6 font-bold">
     {{data.comments.count}} comments
-  </div>
+  </div> -->
 
 
   <div v-html="formattedText"  class="text-sm px-6 py-2 leading-normal"></div>
