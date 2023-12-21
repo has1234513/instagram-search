@@ -27,6 +27,13 @@ export default {
       searchTerm: "",
     };
   },
+  watch: {
+    // Watch for changes in searchTerm
+    searchTerm(newVal) {
+      // Emit an event whenever searchTerm changes
+      this.$emit('search-update', newVal);
+    },
+  },
   methods: {
     search() {
       this.$emit('search-update', this.searchTerm);
