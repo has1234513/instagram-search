@@ -1,6 +1,6 @@
 <script setup>
   import { ref, computed } from 'vue';
-  import instagramCard from '@/components/instagram-card.vue'
+  import instagramCard from '../components/InstagramCard.vue'
   import Search from '../components/Search.vue'
 
   const instagramData = ref([
