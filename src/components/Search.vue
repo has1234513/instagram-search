@@ -1,21 +1,22 @@
 <template>
-  <div class="bg-white p-4 md:p-6 rounded-lg shadow-lg">
-    <h2 class="text-xl md:text-2xl font-semibold mb-4">Find and Aggregate Instagram UGC (User Generated Content)</h2>
-    <div class="relative rounded-full border border-gray-300 p-3">
-      <input
-        v-model="searchTerm"
-        class="w-full outline-none placeholder-gray-500"
-        type="text"
-        placeholder="Enter hashtags(#trend...) or mentions(@user...)"
-      />
-      <button
-        @click="search"
-        class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-blue-500 text-white px-4 py-2 md:px-6 md:py-3 rounded-full hover:bg-blue-600 text-sm md:text-base">
-        Search 
-      <font-awesome-icon icon="fa-solid fa-magnifying-glass" />
-      </button>
+    <div class="w-full max-w-4xl">
+    <h2 class="text-xl md:text-2xl mx-3 font-semibold mb-4">Find and Aggregate Instagram UGC (User Generated Content)</h2>
+      <form @submit.prevent="search" class="mt-5 mx-3 sm:flex sm:items-center">
+        <input 
+          v-model="searchTerm"
+          class="inline w-full rounded-md border border-gray-300 bg-white py-2 pl-3 pr-3 leading-5 placeholder-gray-500 focus:border-indigo-500 focus:placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-indigo-500 sm:text-sm" 
+          placeholder="Enter hashtags(#trend...) or mentions(@user...)"
+          type="search" 
+          autofocus
+        >
+        <button 
+          type="submit" 
+          class="mt-3 inline-flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm"
+        >
+          Search
+        </button>
+      </form>
     </div>
-  </div>
 </template>
 
 <script>
@@ -28,6 +29,7 @@ export default {
   methods: {
     search() {
       // Implement search functionality here
+      console.log('Searching for:', this.searchTerm);
     },
   },
 };
