@@ -36,7 +36,7 @@
     } catch (error) {
       console.error('Error fetching data:', error);
     } finally {
-      isLoading.value = false; // Set loading to false when API call is finished
+      console.log("finally finished")
     }
     setTimeout(() => {
       isLoading.value = false;
