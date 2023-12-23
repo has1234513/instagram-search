@@ -6,7 +6,7 @@
 
   const isLoading = ref(false); // New reactive property for loading state
 
-  const instagramData = ref(data);
+  const instagramData = ref([]);
   
   const searchQuery = ref('');
 
@@ -35,12 +35,13 @@
       instagramData.value = data;
     } catch (error) {
       console.error('Error fetching data:', error);
+      instagramData.value = data
+      setTimeout(() => {
+        isLoading.value = false;
+      }, 1000)();
     } finally {
       console.log("finally finished")
     }
-    setTimeout(() => {
-      isLoading.value = false;
-    }, 1000)();
   }
 
   onMounted(() => {
